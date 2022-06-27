@@ -17,6 +17,7 @@ public class LoginTest {
 	public void setUp(){
 		 System.setProperty("webdriver.chrome.driver", "C:\\Selenium Drivers\\chromedriver.exe");
 		   driver= new ChromeDriver();
+		   System.out.println("Launching Browser");
 	}
 		   
     @Test
@@ -26,11 +27,17 @@ public class LoginTest {
 			   driver.get("https://www.facebook.com/");
 			   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			   
+			   System.out.println("Entering Username");
+			   
 			   driver.findElement(By.xpath("//*[@id='email']")).sendKeys("saylideshpande1991@gmail.com");
   
 			   driver.findElement(By.xpath("//*[@id='pass']")).sendKeys("abcd");
+			   
+			   System.out.println("Entering Password");
 			 
 			   driver.findElement(By.name("login")).click();
+			   
+			   System.out.println("Clicking on login button");
 			   
 			   System.out.println("Logging into Facebook account");
 		   }
